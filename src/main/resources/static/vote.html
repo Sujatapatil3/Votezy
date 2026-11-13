@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Votezy — Cast a Vote</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">✓</span>
+      <span class="brand-name">Votezy</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Overview</a>
+      <a href="voters.html" class="nav-link">Voter roll</a>
+      <a href="candidates.html" class="nav-link">Candidates</a>
+      <a href="vote.html" class="nav-link is-active">Cast a vote</a>
+      <a href="results.html" class="nav-link">Results</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section style="padding-top:2.5rem;">
+    <div class="hero-eyebrow">Polling</div>
+    <h1>Cast a vote</h1>
+    <p>Choose the registered voter and the candidate they're voting for. Each
+    voter can only cast one vote — the backend will reject a second attempt.</p>
+  </section>
+
+  <section class="section two-col">
+    <div class="card">
+      <h3>Ballot</h3>
+      <form id="vote-form" novalidate>
+        <div class="field">
+          <label for="voter-select">Voter</label>
+          <select id="voter-select" required>
+            <option value="">Loading voters…</option>
+          </select>
+          <div id="voter-status"></div>
+          <div class="field-error" id="err-voter"></div>
+        </div>
+        <div class="field">
+          <label for="candidate-select">Candidate</label>
+          <select id="candidate-select" required>
+            <option value="">Loading candidates…</option>
+          </select>
+          <div class="field-error" id="err-candidate"></div>
+        </div>
+        <button type="submit" class="btn" id="vote-submit">Cast vote</button>
+      </form>
+    </div>
+
+    <div>
+      <h3>Turnout</h3>
+      <p class="helper-text">Who has voted, without showing who they voted for — ballots stay secret.</p>
+      <div class="stat-row" id="turnout-row" style="margin-top:0;">
+        <div class="stat">
+          <div class="stat-number" id="turnout-voted">—</div>
+          <div class="stat-label">Voted</div>
+        </div>
+        <div class="stat">
+          <div class="stat-number" id="turnout-remaining">—</div>
+          <div class="stat-label">Not yet voted</div>
+        </div>
+      </div>
+      <ul class="roll" id="vote-list" style="margin-top:1.5rem;"></ul>
+      <div class="empty-state" id="vote-empty" style="display:none;">
+        No voters registered yet.
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span><span class="status-dot" id="status-dot"></span><span id="status-label">Checking connection…</span></span>
+    <span>Votezy · frontend for a Spring Boot + MySQL backend</span>
+  </footer>
+
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/vote.js"></script>
+</body>
+</html>

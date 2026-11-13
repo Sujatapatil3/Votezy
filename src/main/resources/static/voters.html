@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Votezy — Voter Roll</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">✓</span>
+      <span class="brand-name">Votezy</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Overview</a>
+      <a href="voters.html" class="nav-link is-active">Voter roll</a>
+      <a href="candidates.html" class="nav-link">Candidates</a>
+      <a href="vote.html" class="nav-link">Cast a vote</a>
+      <a href="results.html" class="nav-link">Results</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section style="padding-top:2.5rem;">
+    <div class="hero-eyebrow">Voter roll</div>
+    <h1>Register and manage voters</h1>
+    <p>Every entry here is one eligible voter. Each voter can cast exactly one vote.</p>
+  </section>
+
+  <section class="section two-col">
+    <div class="card">
+      <h3 id="form-title">Register a voter</h3>
+      <form id="voter-form" novalidate>
+        <input type="hidden" id="voter-id">
+        <div class="field">
+          <label for="voter-name">Full name</label>
+          <input type="text" id="voter-name" required>
+          <div class="field-error" id="err-name"></div>
+        </div>
+        <div class="field">
+          <label for="voter-email">Email</label>
+          <input type="email" id="voter-email" required>
+          <div class="field-error" id="err-email"></div>
+        </div>
+        <button type="submit" class="btn" id="voter-submit">Register voter</button>
+        <button type="button" class="btn btn-outline" id="voter-cancel" style="display:none; margin-left:0.5rem;">Cancel edit</button>
+      </form>
+    </div>
+
+    <div>
+      <div class="section-head">
+        <h3>Registered voters</h3>
+        <button class="btn btn-small btn-outline" id="refresh-voters">Refresh</button>
+      </div>
+      <ul class="roll" id="voter-list"></ul>
+      <div class="empty-state" id="voter-empty" style="display:none;">
+        No voters registered yet. Use the form to add the first one.
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span><span class="status-dot" id="status-dot"></span><span id="status-label">Checking connection…</span></span>
+    <span>Votezy · frontend for a Spring Boot + MySQL backend</span>
+  </footer>
+
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/voters.js"></script>
+</body>
+</html>

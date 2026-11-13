@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Votezy — Results</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">✓</span>
+      <span class="brand-name">Votezy</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link">Overview</a>
+      <a href="voters.html" class="nav-link">Voter roll</a>
+      <a href="candidates.html" class="nav-link">Candidates</a>
+      <a href="vote.html" class="nav-link">Cast a vote</a>
+      <a href="results.html" class="nav-link is-active">Results</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section style="padding-top:2.5rem;">
+    <div class="hero-eyebrow">Results</div>
+    <h1>Declare and review results</h1>
+    <p>Declaring a result tallies the votes currently on record and stores the
+    winner under the election name you give it.</p>
+  </section>
+
+  <section class="section two-col">
+    <div class="card">
+      <h3>Declare a result</h3>
+      <form id="result-form" novalidate>
+        <div class="field">
+          <label for="election-name">Election name</label>
+          <input type="text" id="election-name" placeholder="e.g. Student Council 2026" required>
+          <div class="field-error" id="err-name"></div>
+        </div>
+        <button type="submit" class="btn" id="result-submit">Declare result</button>
+      </form>
+      <div id="latest-result"></div>
+    </div>
+
+    <div>
+      <div class="section-head">
+        <h3>Declared results</h3>
+        <button class="btn btn-small btn-outline" id="refresh-results">Refresh</button>
+      </div>
+      <ul class="roll" id="result-list"></ul>
+      <div class="empty-state" id="result-empty" style="display:none;">
+        No results declared yet.
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span><span class="status-dot" id="status-dot"></span><span id="status-label">Checking connection…</span></span>
+    <span>Votezy · frontend for a Spring Boot + MySQL backend</span>
+  </footer>
+
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/results.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Votezy — Election Overview</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark">✓</span>
+      <span class="brand-name">Votezy</span>
+    </a>
+    <nav class="main-nav">
+      <a href="index.html" class="nav-link is-active">Overview</a>
+      <a href="voters.html" class="nav-link">Voter roll</a>
+      <a href="candidates.html" class="nav-link">Candidates</a>
+      <a href="vote.html" class="nav-link">Cast a vote</a>
+      <a href="results.html" class="nav-link">Results</a>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <div>
+      <div class="hero-eyebrow">Election management</div>
+      <h1>Every vote, counted once, counted right.</h1>
+      <p>Votezy keeps a single roll of voters, a slate of candidates, and a record
+      of every vote cast — so declaring a result is a lookup, not a guess.</p>
+      <a href="vote.html" class="btn">Cast a vote</a>
+      <a href="results.html" class="btn btn-outline" style="margin-left:0.6rem;">View results</a>
+    </div>
+    <div class="hero-art">
+      <svg width="220" height="220" viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Votezy seal">
+        <circle cx="110" cy="110" r="98" stroke="#9C7A3C" stroke-width="2" stroke-dasharray="3 6"/>
+        <circle cx="110" cy="110" r="78" fill="#1B2A4A"/>
+        <path d="M78 112 L100 134 L146 88" stroke="#EDE6D6" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        <text x="110" y="45" text-anchor="middle" fill="#A32638" font-family="Lora, serif" font-size="15" font-weight="600">VOTEZY</text>
+        <text x="110" y="190" text-anchor="middle" fill="#5B5546" font-family="IBM Plex Sans, sans-serif" font-size="11" letter-spacing="1">official record</text>
+      </svg>
+    </div>
+  </section>
+
+  <section id="stats-section">
+    <div class="stat-row" id="stat-row">
+      <div class="stat">
+        <div class="stat-number" id="stat-voters">—</div>
+        <div class="stat-label">Voters registered</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number" id="stat-candidates">—</div>
+        <div class="stat-label">Candidates standing</div>
+      </div>
+      <div class="stat">
+        <div class="stat-number" id="stat-votes">—</div>
+        <div class="stat-label">Votes cast</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-head">
+      <h2>Get started</h2>
+    </div>
+    <div class="two-col">
+      <div class="card">
+        <h3>1. Register</h3>
+        <p class="helper-text">Add voters and candidates before polling opens.</p>
+        <a href="voters.html" class="btn btn-small btn-outline">Add a voter</a>
+        <a href="candidates.html" class="btn btn-small btn-outline" style="margin-top:0.5rem;">Add a candidate</a>
+      </div>
+      <div class="card">
+        <h3>2. Vote, then declare</h3>
+        <p class="helper-text">Each voter can cast one vote. Once polling closes,
+        declare the result for an election name and Votezy will record the
+        winner and total turnout.</p>
+        <a href="vote.html" class="btn btn-small btn-outline">Cast a vote</a>
+        <a href="results.html" class="btn btn-small btn-outline" style="margin-top:0.5rem;">Declare a result</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span><span class="status-dot" id="status-dot"></span><span id="status-label">Checking connection…</span></span>
+    <span>Votezy · frontend for a Spring Boot + MySQL backend</span>
+  </footer>
+
+</main>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/home.js"></script>
+</body>
+</html>
